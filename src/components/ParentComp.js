@@ -1,0 +1,32 @@
+import React, { Component } from 'react'
+import RegComp from './RegComp'
+import PureComp from './PureComp'
+
+class ParentComp extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             name: 'Razib'
+        }
+    }
+    componentDidMount(){
+        setInterval(()=>{
+            this.setState({
+                name:'Razib'
+            })
+        }, 2000)
+
+    }
+    
+    render() {
+        return (
+            <div>
+                <RegComp name={this.state.name}/>
+                <PureComp name={this.state.name}/>
+            </div>
+        )
+    }
+}
+
+export default ParentComp
