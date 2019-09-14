@@ -10,10 +10,19 @@ import LifecycleA from './components/LifecycleA';
 import Fragment from './components/Fragment';
 import ParentComp from './components/ParentComp';
 import RefsDemo from './components/RefsDemo';
+import PortalDemo from './components/PortalDemo';
+import ErrorBoundary from './components/ErrorBoundary';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <div className="App">
+      <ErrorBoundary>
+        <Hero heroName="batman"/>
+        <Hero heroName="superman"/>
+        {/* <Hero heroName="joker"/> */}
+      </ErrorBoundary>
+      <PortalDemo/>
       <RefsDemo/>
       <ParentComp/>
       <Fragment/>
